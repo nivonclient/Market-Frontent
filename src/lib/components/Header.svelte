@@ -1,5 +1,6 @@
 <script lang="ts">
     import { isLogged } from '$lib/auth/auth';
+	import Button from './Button.svelte';
 </script>
 
 <div class="header layout" id="nav">
@@ -16,8 +17,10 @@
                 <a href="#" class="btn skin">Account</a>
             </div>
         {:else}
-            <a href="#" class="btn">Login</a>
-            <a href="#" class="btn">Signup</a>
+            <div class="btn-group-row">
+                <Button href="/" color="orange"><i class="fa-solid fa-right-to-bracket"></i>Login</Button>
+                <Button href="/" color="skin"><i class="fa-solid fa-user-plus"></i>Signup</Button>
+            </div>
         {/if}
     </div>
 </div>

@@ -1,3 +1,3 @@
-const isLoggedIn: boolean = true;
+const isLoggedIn: boolean = false;
 
 export const isLogged = isLoggedIn;
