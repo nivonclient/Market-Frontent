@@ -1,0 +1,16 @@
+/* A general file */
+
+@import 'root.css';
+@import 'layout.css';
+@import 'typography.css';
+@import 'button.css';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: calc(100vh - 5.5px);
+    box-sizing: border-box;
+
+    border: 3px solid #ff7a00;
+}

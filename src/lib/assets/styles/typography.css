@@ -1,0 +1,36 @@
+/* Remove the default decoration of <a>, <p> and replace with my custom */
+p,
+a {
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    gap: 10px;
+}
+
+/* Home Page Subtitle */
+.subtitle {
+    position: relative;
+    font-size: 27.7px;
+    color: rgb(var(--color-text) / 0.7);
+    font-family: var(--font-base);
+    text-shadow: 3px 3px rgb(var(--color-black) / 0.45);
+}
+
+/* Navbar's title */
+#nav .title {
+    font-family: var(--font-base);
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+/* Home content's title */
+#content .title {
+    font-family: var(--font-base);
+    color: white;
+    font-weight: 700;
+    font-size: 120px;
+    align-self: center;
+    transform: translateY(40px);
+    text-shadow: 10px 10px rgb(var(--color-black) / 0.45);
+}

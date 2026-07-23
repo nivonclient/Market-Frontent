@@ -1,0 +1,53 @@
+/* Background */
+body {
+    min-height: 100vh;
+
+    background: url("../background_home.webp") center / cover no-repeat;
+}
+
+/* Home Content */
+#content {
+    min-height: calc(100vh - 84px);
+}
+
+#content .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-80px);
+}
+
+/* Navbar for sure */
+#nav {
+    background-color: rgb(var(--color-black) / 0.52);
+    padding: 15px;
+}
+
+/* Layout/canvas */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    height: auto;
+    width: auto;
+
+    .left-side {
+        grid-column: 1;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .center {
+        grid-column: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .right-side {
+        grid-column: 3;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+}

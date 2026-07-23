@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+	/* colors */
+	--color-bg: 13 13 13;
+
+	--color-surface: 26 26 26;
+
+	--color-black: 0 0 0;
+
+	--color-white: 255 255 255;
+
+	--color-text: 240 240 240;
+	--color-text-muted: 153 153 153;
+
+	--color-orange: 255 107 44;
+	--color-skin: 178 161 124;
+
+	--color-blue: 65 105 225;
+
+	--color-green: 75 93 25;
+	--color-light-green: 0 200 83;
+
+	--color-purple: 155 89 182;
+
+	--color-pink: 255 105 180;
+
+	--color-yellow: 255 217 61;
+
+	--color-red: 255 71 87;
+
+	/* typography */
+	--font-base: 'Bricolage Grotesque', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', monospace;
+
+	/* border shortcuts */
+	--orange-border: 3px solid var(--color-orange);
+	--white-border: 3px solid var(--color-white);
+
+	/* radii -> square corners throughout */
+	--radius-sm: 0;
+	--radius-card: 0;
+	--radius-lg: 0;
+
+	/* focus ring */
+	--focus-ring: 0 0 0 3px rgba(255, 107, 44, 0.35);
+
+	/* card shadow shortcut */
+	--card-shadow: 4px 4px 0 var(--card-accent, var(--color-orange));
+	--card-shadow-hover: 7px 7px 0 var(--card-accent, var(--color-orange));
+
+	/* neo-brutalist hard shadows -> reusable across reviews/cards */
+	--shadow-brutal-sm: 3px 3px 0 var(--color-black);
+	--shadow-brutal-md: 5px 5px 0 var(--color-black);
+	--shadow-brutal-lg: 7px 7px 0 var(--color-black);
+	--shadow-brutal-xl: 10px 10px 0 var(--color-black);
+
+	/* colored brutal shadows -> for accent surfaces */
+	--shadow-yellow: 6px 6px 0 var(--color-yellow);
+	--shadow-orange: 6px 6px 0 var(--color-orange);
+	--shadow-green: 6px 6px 0 var(--color-green);
+	--shadow-blue: 6px 6px 0 var(--color-blue);
+	--shadow-pink: 6px 6px 0 var(--color-pink);
+	--shadow-purple: 6px 6px 0 var(--color-purple);
+	--shadow-red: 6px 6px 0 var(--color-red);
+}
