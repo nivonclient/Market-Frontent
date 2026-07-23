@@ -16,6 +16,16 @@ a {
     text-shadow: 3px 3px rgb(var(--color-black) / 0.45);
 }
 
+/* logo */
+.logo {
+	width: 40px;
+	height: 40px;
+	background-image: url('../favicon.svg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 /* Navbar's title */
 #nav .title {
     font-family: var(--font-base);

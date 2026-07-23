@@ -5,7 +5,7 @@
 
 <div class="header layout" id="nav">
     <div class="left-side">
-        <span class="title">Pumpkin Market</span>
+        <span class="title"><div class="logo"></div>Pumpkin Market</span>
     </div>
     <!-- <div class="center">
         <a href="#" class="btn"><i class="fa-solid fa-magnifying-glass"></i>Browse</a>

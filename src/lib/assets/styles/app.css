@@ -9,8 +9,13 @@ html,
 body {
     margin: 0;
     padding: 0;
-    min-height: calc(100vh - 5.5px);
-    box-sizing: border-box;
+}
 
-    border: 3px solid #ff7a00;
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    border: 5px solid #ff7a00;
+    pointer-events: none;
+    z-index: 9999;
 }
