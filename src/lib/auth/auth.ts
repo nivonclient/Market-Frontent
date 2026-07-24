@@ -1,3 +1,5 @@
-const isLoggedIn: boolean = false;
+const auth = {
+    isLoggedIn: false,
+};
 
-export const isLogged = isLoggedIn;
+export default auth;

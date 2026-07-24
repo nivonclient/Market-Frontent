@@ -51,3 +51,14 @@ body {
     }
 
 }
+
+/* wrapper for 2 col */
+.wrapper-2c {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}

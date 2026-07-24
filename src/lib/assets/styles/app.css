@@ -15,7 +15,8 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    border: 5px solid #ff7a00;
+    /*border: 5px solid #ff7a00;*/
+    border: 5px solid rgb(var(--color-orange) / 0.45);
     pointer-events: none;
     z-index: 9999;
 }
