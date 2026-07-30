@@ -62,7 +62,7 @@
           		<p class="subtitle">A martket for pump-keen</p>
           		<div class="btn-group-row">
           			<Button href="/" color="green"><i class="fa-solid fa-compass"></i>Begin Your Journey</Button>
-          			<Button href="/" color="skin"><i class="fa-solid fa-magnifying-glass"></i>Explore Landscapes...</Button>
+          			<Button href="/browse" color="skin"><i class="fa-solid fa-magnifying-glass"></i>Explore Landscapes...</Button>
           		</div>
         {/snippet}
     </Layout>

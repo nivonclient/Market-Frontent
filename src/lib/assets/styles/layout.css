@@ -4,6 +4,7 @@ body {
 }
 
 /* -- Sub: render video -- */
+.bg,
 #background-video {
     position: fixed;
     top: 0;
