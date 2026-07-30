@@ -1,8 +1,17 @@
 /* Background */
 body {
-    min-height: 100vh;
+    min-height: 200vh;
+}
 
-    background: url("../background_home.webp") center / cover no-repeat;
+/* -- Sub: render video -- */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
 }
 
 /* Home Content */
@@ -52,7 +61,7 @@ body {
 
 }
 
-/* wrapper for 2 col */
+/* Wrapper for 2 col */
 .wrapper-2c {
     display: flex;
     grid-template-columns: 1fr 1fr;

@@ -16,31 +16,31 @@
 
     &.orange {
         background-color: rgb(var(--color-orange));
-        box-shadow: 5px 5px color-mix(in srgb, rgb(var(--color-orange) / 0.45) 50%, black);
+        box-shadow: 5px 5px color-mix(in srgb, rgb(var(--color-orange)) 50%, black);
 
         &:hover {
             transform: translate(-4px, -4px);
-            box-shadow: 9px 9px color-mix(in srgb, rgb(var(--color-orange) / 0.45) 50%, black);
+            box-shadow: 9px 9px color-mix(in srgb, rgb(var(--color-orange)) 50%, black);
         }
     }
 
     &.skin {
         background-color: rgb(var(--color-skin));
-        box-shadow: 5px 5px color-mix(in srgb, rgb(var(--color-skin) / 0.45) 50%, black);
+        box-shadow: 5px 5px color-mix(in srgb, rgb(var(--color-skin)) 50%, black);
 
         &:hover {
             transform: translate(-4px, -4px);
-             box-shadow: 9px 9px color-mix(in srgb, rgb(var(--color-skin) / 0.45) 50%, black);
+            box-shadow: 9px 9px color-mix(in srgb, rgb(var(--color-skin)) 50%, black);
         }
     }
 
     &.green {
         background-color: rgb(var(--color-green));
-        box-shadow: 5px 5px color-mix(in srgb, rgb(var(--color-green) / 0.45) 50%, black);
+        box-shadow: 5px 5px color-mix(in srgb, rgb(var(--color-green)) 50%, black);
 
         &:hover {
             transform: translate(-4px, -4px);
-             box-shadow: 9px 9px color-mix(in srgb, rgb(var(--color-green) / 0.45) 50%, black);
+             box-shadow: 9px 9px color-mix(in srgb, rgb(var(--color-green)) 50%, black);
         }
     }
 
