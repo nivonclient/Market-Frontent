@@ -35,7 +35,7 @@ a {
 }
 
 /* Home content's title */
-#content .title {
+.content .title {
     font-family: var(--font-base);
     color: white;
     font-weight: 700;

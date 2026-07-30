@@ -1,8 +1,10 @@
 <script lang="ts">
+    // Math
     import { auth } from "$lib/auth";
 	import Button from './Button.svelte';
 </script>
 
+<!-- Navigagion Bar/Nav/Header -->
 <div class="header layout" id="nav">
     <div class="left-side">
         <div class="wrapper-2c">

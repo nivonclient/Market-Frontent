@@ -1,65 +1,83 @@
 <script lang="ts">
+    // Math
 	import Button from '$lib/components/Button.svelte';
-	import bg from '$lib/assets/background_home.mp4'; //h264 encode
+	import BgHome from '$lib/assets/background_home.mp4';
+	import Layout from '$lib/Layout.svelte';
 
-	let video: HTMLVideoElement;
-	let ready = $state(false);
-	let pending = false;
-	let latestProgress = 0;
+	let video: HTMLVideoElement, ready = $state(false), pending = false, p = 0;
 
-	const applySeek = () => {
-		if (!video.duration) return;
-		pending = true;
-		video.currentTime = latestProgress * video.duration;
+	// As user scroll's event, bg vid sync frame to match the scroll progress
+	const frame_sync = () => {
+	    if (video.duration) {
+			pending = true;
+			video.currentTime = p * video.duration;
+	    }
 	};
-
-	const onScroll = () => {
-		if (!ready) return;
-		const max = document.body.scrollHeight - window.innerHeight;
-		if (max <= 0) return;
-		latestProgress = Math.min(Math.max(window.scrollY / max, 0), 1);
-		if (!pending) applySeek(); // Only seek if not already mid-seek/pending/during
-	};
-
 	$effect(() => {
-		const onLoaded = () => { ready = true; applySeek(); };
-		const onSeeked = () => {
-			pending = false;
-			// If scroll moved further while we were seeking, after it
-			const target = latestProgress * video.duration;
-			if (Math.abs(video.currentTime - target) > 0.01) applySeek();
+	    // After the browser read vid data, this start
+		const load_after = () => {
+		    ready = true; //allow scrolling
+			frame_sync(); //enrure-ing/load the first frame ...
 		};
-		video.addEventListener('loadedmetadata', onLoaded);
-		video.addEventListener('seeked', onSeeked);
-		window.addEventListener('scroll', onScroll, { passive: true });
+		// After the frame sync task finish, check if user scrolling again
+		const frame_sync_after = () => {
+		    pending = false;
+			if (Math.abs(video.currentTime - p * video.duration) > 0.01) {
+			  frame_sync();//sync
+			};
+		};
+		// Scrool
+		const scroll = () => {
+			const m = document.body.scrollHeight - innerHeight;
+			if (!ready || m <= 0) return;
+			p = Math.min(Math.max(scrollY / m, 0), 1);
+			if (!pending) {
+			  frame_sync()//sync
+			};
+		};
+
+		// Aftermath
+		video.addEventListener('loadedmetadata', load_after);
+		video.addEventListener('seeked', frame_sync_after);
+		addEventListener('scroll', scroll, { passive: true });
+		if (video.readyState >= 1) { scroll(); load_after(); }
 		return () => {
-			video.removeEventListener('loadedmetadata', onLoaded);
-			video.removeEventListener('seeked', onSeeked);
-			window.removeEventListener('scroll', onScroll);
+		    video.removeEventListener('loadedmetadata', load_after);
+			video.removeEventListener('seeked', frame_sync_after);
+			removeEventListener('scroll', scroll);
 		};
 	});
 </script>
 
-<video
-    bind:this={video}
-    id="background-video"
-    muted
-    playsinline
-    preload="auto"
-    aria-hidden="true"
->
-    <source src={bg} type='video/mp4' />
+<!-- Vid/Bg -->
+<video bind:this={video} id="background-video" muted playsinline preload="auto" aria-hidden="true">
+    <source src={BgHome} type='video/mp4' />
 </video>
 
-<div class="wrapper-scroll">
-	<div class="layout" id="content">
-		<div class="center">
-			<span class="title">Pumpkin Market</span>
-			<p class="subtitle">A martket for pump-keen</p>
-			<div class="btn-group-row">
-				<Button href="/" color="green"><i class="fa-solid fa-compass"></i>Begin Your Journey</Button>
-				<Button href="/" color="skin"><i class="fa-solid fa-magnifying-glass"></i>Explore Landscapes...</Button>
-			</div>
-		</div>
-	</div>
-</div>
+<!-- The thing that people should see first, i don't know how to express that... -->
+<section id="must-see">
+    <Layout classIn="content">
+        {#snippet center()}
+            <span class="title">Pumpkin Market</span>
+          		<p class="subtitle">A martket for pump-keen</p>
+          		<div class="btn-group-row">
+          			<Button href="/" color="green"><i class="fa-solid fa-compass"></i>Begin Your Journey</Button>
+          			<Button href="/" color="skin"><i class="fa-solid fa-magnifying-glass"></i>Explore Landscapes...</Button>
+          		</div>
+        {/snippet}
+    </Layout>
+</section>
+
+<!-- The thing that people should sroll down to scroll, i don't know how to express that... -->
+<section id="may-see">
+    <Layout classIn="content">
+        {#snippet left()}
+            <span class="title">Pumpkin Market</span>
+          		<p class="subtitle">A martket for pump-keen</p>
+          		<div class="btn-group-row">
+          			<Button href="/" color="green"><i class="fa-solid fa-compass"></i>Begin Your Journey</Button>
+          			<Button href="/" color="skin"><i class="fa-solid fa-magnifying-glass"></i>Explore Landscapes...</Button>
+          		</div>
+        {/snippet}
+    </Layout>
+</section>

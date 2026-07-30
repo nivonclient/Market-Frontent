@@ -1,6 +1,6 @@
 /* Background */
 body {
-    min-height: 200vh;
+    min-height: 100vh;
 }
 
 /* -- Sub: render video -- */
@@ -15,11 +15,11 @@ body {
 }
 
 /* Home Content */
-#content {
-    min-height: calc(100vh - 84px);
+.content {
+    min-height: calc(100dvh - 84px);
 }
 
-#content .center {
+.content .center {
     display: flex;
     flex-direction: column;
     justify-content: center;
