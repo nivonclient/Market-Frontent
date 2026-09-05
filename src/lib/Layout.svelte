@@ -1,4 +1,4 @@
-<!-- A general layout provider -> Base for future developments -->
+<!-- A general layout provider -> Base for future improvements -->
 <script lang="ts">
     //Math
 	import type { Snippet } from 'svelte';

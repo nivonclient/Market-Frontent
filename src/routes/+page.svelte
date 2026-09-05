@@ -3,6 +3,9 @@
 	import Button from '$lib/components/Button.svelte';
 	import BgHome from '$lib/assets/background_home.mp4';
 	import Layout from '$lib/Layout.svelte';
+	import Image from '$lib/Image.svelte';
+	import Pig from '$lib/assets/pig.png';
+	import Position from '$lib/Position.svelte';
 
 	let video: HTMLVideoElement, ready = $state(false), pending = false, p = 0;
 
@@ -77,12 +80,15 @@
 <section id="may-see">
     <Layout classIn="content">
         {#snippet left()}
+            <Position position="relative" x={10}>{#snippet inner()}<Image imgSrc={Pig} widthOg={262} heightOg={458} relative={1.5} />{/snippet}</Position>
+        {/snippet}
+        {#snippet center()}
             <span class="title">Pumpkin Market</span>
-          		<p class="subtitle">A martket for pump-keen</p>
-          		<div class="btn-group-row">
-          			<Button href="/" color="green"><i class="fa-solid fa-compass"></i>Begin Your Journey</Button>
-          			<Button href="/" color="skin"><i class="fa-solid fa-magnifying-glass"></i>Explore Landscapes...</Button>
-          		</div>
+            <p class="subtitle">A martket for pump-keen</p>
+            <div class="btn-group-row">
+          		<Button href="/" color="green"><i class="fa-solid fa-compass"></i>Begin Your Journey</Button>
+          		<Button href="/browse" color="skin"><i class="fa-solid fa-magnifying-glass"></i>Explore Landscapes...</Button>
+            </div>
         {/snippet}
     </Layout>
 </section>
