@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from "$app/paths";
+
     // Math
     import { auth } from "$lib/auth";
 	import Button from './Button.svelte';
@@ -7,10 +9,10 @@
 <!-- Navigagion Bar/Nav/Header -->
 <div class="header layout" id="nav">
     <div class="left-side">
-        <div class="wrapper-2c">
+        <a href={resolve("/")} class="wrapper-2c">
             <div class="logo"></div>
             <span class="title">Pumpkin Market</span>
-        </div>
+        </a>
     </div>
     <!-- <div class="center">
         <a href="#" class="btn"><i class="fa-solid fa-magnifying-glass"></i>Browse</a>

@@ -1,3 +1,11 @@
+/* Fonts */
+@font-face {
+    font-family: "Palmira";
+    src: url("../fonts/Palmira.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Remove the default decoration of <a>, <p> and replace with my custom */
 p,
 a {
@@ -13,6 +21,7 @@ a {
     font-size: 27.7px;
     color: rgb(var(--color-text) / 0.7);
     font-family: var(--font-base);
+    gap: 0;
     text-shadow: 3px 3px rgb(var(--color-black) / 0.45);
 }
 
@@ -26,17 +35,39 @@ a {
 	background-repeat: no-repeat;
 }
 
-/* Navbar's title */
-#nav .title {
+/* Title */
+.title {
     font-family: var(--font-base);
     color: white;
     font-weight: 700;
+}
+
+/* -- Sub: nav's Title */
+#nav .title {
     font-size: 24px;
 }
 
-/* Home content's title */
-.content .title {
-    font-family: var(--font-base);
+/* Hightlight */
+.hightlight {
+    position: relative;
+    font-family: "Palmira", serif;
+    color: white;
+    font-weight: 700;
+    font-size: 140px;
+    z-index: 0;
+}
+
+.hightlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: orange;
+    transform: skewX(-8deg);
+    z-index: -1;
+}
+
+/* H1 */
+h1 {
     color: white;
     font-weight: 700;
     font-size: 120px;
